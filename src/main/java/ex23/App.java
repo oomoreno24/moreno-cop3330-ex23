@@ -65,6 +65,59 @@ Identify a rules engine for your programming language and use it to solve this p
 
 public class App {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("Troubleshooting issues with a car. Enter y for yes, and n for no.\n");
+
+        // first question before if statements
+        System.out.print("Is the car silent when you turn the key? ");
+        String q1 = in.nextLine();
+
+        // first major if statement branch
+        if (q1.equals("y")) {
+            System.out.print("Are the battery terminals corroded? ");
+            String q12 = in.nextLine();
+            if (q12.equals("y")) {
+                System.out.print("Clean terminals and try starting again.");
+            }
+            else {
+                System.out.print("Replace cables and try again.");
+            }
+        }
+        // second major if statement branch
+        else {
+            System.out.print("Does the car make a slicking noise? ");
+            String q2 = in.nextLine();
+            if (q2.equals("y")) {
+                System.out.print("Replace the battery.");
+            }
+            else {
+                System.out.print("Does the car crank up but fail to start? ");
+                String q3 = in.nextLine();
+                if (q3.equals("y")) {
+                    System.out.print("Check spark plug connections.");
+                }
+                else {
+                    System.out.print("Does the engine start and then die? ");
+                    String q4 = in.nextLine();
+                    if (q4.equals("y")) {
+                        System.out.print("Does your car have fuel injection? ");
+                        String q5 = in.nextLine();
+                        if (q5.equals("y")) {
+                            System.out.print("Get it in for service.");
+                        }
+                        else {
+                            System.out.print("Check to ensure the choke is opening and closing.");
+                        }
+                    }
+                    else {
+                        System.out.print("This should not be possible.");
+                    }
+                }
+            }
+
+        }
+
 
     }
 }
